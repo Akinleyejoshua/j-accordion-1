@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* Styling for the accordion overall */
+.acc{
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    box-shadow: 0 0 5px black;
+}
+
+/* the accordion button */
+.acc .accordion{
+    border: none;
+    text-align: left;
+    padding: 1em;
+    color: slateblue;
+    cursor: pointer;
+    background: white;
+    transition: 0.5s;
+}
+
+/* the accordion button + icon added after the button */
+.acc .accordion::after{
+    content: "\2795";
+    float: right;
+}
+
+.acc .accordion-panel{
+    max-height: 0;
+    overflow: auto;
+    transition: 0.5s;
+}
+
+.acc .accordion-panel p{
+    color: gray;
+    padding: 1em;
+}
+
+/* accordion active class when clicked */
+.acc button.accordion-active{
+    background: slateblue;
+    color: white;
+}
+
+/* change the accordion + icon to - when clicked */
+.acc button.accordion-active::after{
+    content: "\2796";
+    float: right;
+}
